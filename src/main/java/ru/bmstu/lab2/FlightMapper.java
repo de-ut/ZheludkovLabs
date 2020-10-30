@@ -9,7 +9,7 @@ import java.io.IOException;
 public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        if(key.get() == 0)
+        if(key.get() == 0) return
         String[] fields = value.toString().replace("\"", "").split(",");
         String delay = fields[19];
         if(!delay.isEmpty() && !delay.equals("0.00"))
