@@ -1,4 +1,6 @@
 package ru.bmstu.lab2;
 
-public class AirportMapper extends Mapper<>{
+import org.apache.hadoop.io.LongWritable;
+
+public class AirportMapper extends Mapper<LongWritable, >{
 }
