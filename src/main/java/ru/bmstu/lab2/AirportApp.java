@@ -32,6 +32,7 @@ public class AirportApp {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
 
-        job.set
+        job.setNumReduceTasks(2);
+        
     }
 }
