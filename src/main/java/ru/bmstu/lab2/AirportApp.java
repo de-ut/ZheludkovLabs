@@ -2,7 +2,7 @@ package ru.bmstu.lab2;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.mapred.TextInputFormat;
-import org.apache.hadoop.mapreduce.lib.inpit.MultipleInputs;
+import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
