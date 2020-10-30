@@ -9,6 +9,9 @@ import java.io.IOException;
 public class AirportID implements WritableComparable<AirportID> {
     private int id;
     private boolean indicator;
+
+    AirportID() {}
+    AirportID()
     @Override
     public int compareTo(AirportID o) {
         return 0;
