@@ -21,7 +21,7 @@ public class AirportReducer extends Reducer<AirportID, Text, Text, Text> {
 
         while(iter.hasNext()){
             count++;
-            
+            float current = 
         }
     }
 }
