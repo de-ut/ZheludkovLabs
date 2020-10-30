@@ -24,7 +24,7 @@ public class AirportReducer extends Reducer<AirportID, Text, Text, Text> {
             float current = Float.parseFloat(iter.next().toString());
             min = Math.min(min, current);
             max = Math.max(max, current);
-            avg = (avg * count + current) / 
+            avg = (avg * count + current) / (float)
         }
     }
 }
