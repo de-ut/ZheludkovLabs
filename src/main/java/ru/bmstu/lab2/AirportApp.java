@@ -30,6 +30,6 @@ public class AirportApp {
         job.setMapOutputValueClass(Text.class);
 
         job.setOutputKeyClass(Text.class);
-        job.setOutputFormatClass(Text.class);
+        job.setOutputValueClass(Text.class);
     }
 }
