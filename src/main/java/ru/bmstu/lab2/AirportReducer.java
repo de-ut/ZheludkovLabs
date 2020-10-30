@@ -25,5 +25,7 @@ public class AirportReducer extends Reducer<AirportID, Text, Text, Text> {
             max = Math.max(max, current);
             avg = (avg * count + current) / (float)++count;
         }
+
+        
     }
 }
