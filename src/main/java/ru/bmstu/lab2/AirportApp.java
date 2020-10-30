@@ -1,6 +1,7 @@
 package ru.bmstu.lab2;
 
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.hadoop.mapred.lib.MultipleInputs;
 import org.apache.hadoop.mapreduce.Job;
 
@@ -13,6 +14,6 @@ public class AirportApp {
         Job job = Job.getInstance();
         job.setJarByClass(AirportApp.class);
         job.setJobName("AirportApp");
-        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat);
+        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, );
     }
 }
