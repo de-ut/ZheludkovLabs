@@ -12,6 +12,8 @@ public class AirportReducer extends Reducer<AirportID, Text, Text, Text> {
         Iterator<Text> iter = values.iterator();
         String name = iter.next().toString();
 
+        if(!iter.hasNext()) return;
+
         int count = 0;
         float min = Float.MAX_VALUE;
         float max = Float.MIN_VALUE;
