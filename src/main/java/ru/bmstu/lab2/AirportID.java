@@ -7,11 +7,11 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class AirportID implements WritableComparable<AirportID> {
-    private Integer id;
+    private String id;
     private Boolean indicator;
 
     AirportID() {}
-    AirportID(int id, boolean indicator){
+    AirportID(String id, boolean indicator){
         this.id = id;
         this.indicator = indicator;
     }
@@ -25,13 +25,13 @@ public class AirportID implements WritableComparable<AirportID> {
 
     @Override
     public void write(DataOutput dataOutput) throws IOException {
-        dataOutput.writeInt(id);
+        dataOutput.writeUTF(id);
         dataOutput.writeBoolean(indicator);
     }
 
     @Override
     public void readFields(DataInput dataInput) throws IOException {
-        id = dataInput.readInt();
+        id = dataInput.readUTF();
         indicator = dataInput.readBoolean();
     }
 }
