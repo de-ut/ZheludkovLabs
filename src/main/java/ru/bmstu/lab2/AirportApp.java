@@ -4,6 +4,7 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.hadoop.mapred.lib.MultipleInputs;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class AirportApp {
     public static void main(String[] args) throws Exception{
@@ -16,6 +17,6 @@ public class AirportApp {
         job.setJobName("AirportApp");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, );
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, );
-        
+        FileOutputFormat.setOutputPath();
     }
 }
