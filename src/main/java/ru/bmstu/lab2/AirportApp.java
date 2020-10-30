@@ -29,6 +29,7 @@ public class AirportApp {
         job.setMapOutputKeyClass(AirportID.class);
         job.setMapOutputValueClass(Text.class);
 
-        job.setOutputKeyClass();
+        job.setOutputKeyClass(Text.class);
+        job.setOutputFormatClass(Text.class);
     }
 }
