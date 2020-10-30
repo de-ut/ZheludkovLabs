@@ -1,4 +1,4 @@
 package ru.bmstu.lab2;
 
-public class AirportReducer extends Reducer<AirportID, Text, {
+public class AirportReducer extends Reducer<AirportID, Text, Text, Text>{
 }
