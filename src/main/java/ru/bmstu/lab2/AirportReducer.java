@@ -26,6 +26,6 @@ public class AirportReducer extends Reducer<AirportID, Text, Text, Text> {
             avg = (avg * count + current) / (float)++count;
         }
 
-        context.write(new Text(key.getId()), );
+        context.write(new Text(key.getId()), new Text());
     }
 }
