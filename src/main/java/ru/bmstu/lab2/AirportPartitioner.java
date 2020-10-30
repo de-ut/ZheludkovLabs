@@ -1,2 +1,4 @@
-package ru.bmstu.lab2;public class AirportPartitioner {
+package ru.bmstu.lab2;
+
+public class AirportPartitioner {
 }
