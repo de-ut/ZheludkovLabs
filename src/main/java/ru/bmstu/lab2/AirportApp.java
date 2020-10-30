@@ -6,6 +6,6 @@ public class AirportApp {
             System.err.println("Use: AirportApp <flights path> <airport path> <output path>");
             System.exit(-1);
         }
-        
+        Job job = 
     }
 }
