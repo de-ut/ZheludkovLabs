@@ -13,6 +13,6 @@ public class AirportApp {
         Job job = Job.getInstance();
         job.setJarByClass(AirportApp.class);
         job.setJobName("AirportApp");
-        MultipleInputs.addInputPath(job, new Path());
+        MultipleInputs.addInputPath(job, new Path(args[0]));
     }
 }
