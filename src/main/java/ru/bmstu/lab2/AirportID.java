@@ -12,8 +12,10 @@ public class AirportID implements WritableComparable<AirportID> {
 
     AirportID() {}
     AirportID(int id, boolean indicator){
-        
+        this.id = id;
+        this.indicator = indicator;
     }
+    
     @Override
     public int compareTo(AirportID o) {
         return 0;
