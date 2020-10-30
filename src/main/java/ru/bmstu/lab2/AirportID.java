@@ -30,12 +30,12 @@ public class AirportID implements WritableComparable<AirportID> {
     @Override
     public void write(DataOutput dataOutput) throws IOException {
         dataOutput.writeUTF(id);
-        dataOutput.writeBoolean(indicator);
+        dataOutput.writeUTF(indicator);
     }
 
     @Override
     public void readFields(DataInput dataInput) throws IOException {
         id = dataInput.readUTF();
-        indicator = dataInput.readBoolean();
+        indicator = dataInput.readUTF();
     }
 }

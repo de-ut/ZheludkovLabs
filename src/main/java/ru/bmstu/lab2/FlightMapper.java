@@ -13,6 +13,6 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text> {
         String[] fields = value.toString().replace("\"", "").split(",");
         String delay = fields[19];
         if(!delay.isEmpty() && !delay.equals("0.00"))
-            context.write(new AirportID(fields[14], true), new Text(delay));
+            context.write(new AirportID(fields[14], "1"), new Text(delay));
     }
 }
