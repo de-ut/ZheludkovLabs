@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class AirportID implements WritableComparable<AirportID> {
     private Integer id;
-    private boolean indicator;
+    private Boolean indicator;
 
     AirportID() {}
     AirportID(int id, boolean indicator){
@@ -19,7 +19,8 @@ public class AirportID implements WritableComparable<AirportID> {
     @Override
     public int compareTo(AirportID o) {
         int result = id.compareTo(o.id);
-        if(result == 0) return 
+        if(result == 0) return indicator.compareTo(o.indicator);
+        return result;
     }
 
     @Override
