@@ -11,7 +11,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text> {
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if(key.get() == 0) return;
         String[] fields = value.toString().replace("\"", "").split(",");
-        String delay = fields[18];
+        String delay = fields[19];
         if(!delay.isEmpty() && Float.parseFloat(delay) > 0)
             context.write(new AirportID(fields[14], "1"), new Text(delay));
     }
