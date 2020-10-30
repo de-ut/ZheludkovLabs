@@ -24,12 +24,11 @@ public class AirportApp {
 
         job.setMapOutputKeyClass(AirportID.class);
         job.setMapOutputValueClass(Text.class);
-        
+
         job.setPartitionerClass(AirportPartitioner.class);
         job.setGroupingComparatorClass(AirportGroupingComparator.class);
         job.setReducerClass(AirportReducer.class);
-
-
+        
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
     }
