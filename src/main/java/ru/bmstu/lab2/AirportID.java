@@ -18,7 +18,7 @@ public class AirportID implements WritableComparable<AirportID> {
 
     @Override
     public int compareTo(AirportID o) {
-        id.compareTo(o.id)
+        result = id.compareTo(o.id);
     }
 
     @Override
