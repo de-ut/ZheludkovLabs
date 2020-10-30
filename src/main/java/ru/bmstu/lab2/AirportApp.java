@@ -1,2 +1,4 @@
-package ru.bmstu.lab2;public class AirportApp {
+package ru.bmstu.lab2;
+
+public class AirportApp {
 }
