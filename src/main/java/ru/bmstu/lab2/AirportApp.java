@@ -13,10 +13,11 @@ public class AirportApp {
             System.err.println("Use: AirportApp <flight path> <airport path> <output path>");
             System.exit(-1);
         }
+
         Job job = Job.getInstance();
         job.setJarByClass(AirportApp.class);
         job.setJobName("AirportApp");
-        
+
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
@@ -27,5 +28,7 @@ public class AirportApp {
 
         job.setMapOutputKeyClass(AirportID.class);
         job.setMapOutputValueClass(Text.class);
+
+        
     }
 }
