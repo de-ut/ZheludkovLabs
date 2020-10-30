@@ -10,7 +10,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportID, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if(key.get() == 0) return;
-        String[] fields = value.toString().replace("\"", "").split(",");
+        String[] fields = value.toString().replace("\"", "").split(",", 2);
         context.write(new AirportID(fields[0], true), new Text(fields[1]));
     }
 }
