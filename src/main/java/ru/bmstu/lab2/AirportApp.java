@@ -1,6 +1,5 @@
 package ru.bmstu.lab2;
 
-
 import org.apache.hadoop.mapred.lib.MultipleInputs;
 import org.apache.hadoop.mapreduce.Job;
 
