@@ -20,6 +20,7 @@ public class AirportReducer extends Reducer<AirportID, Text, Text, Text> {
         float avg = 0;
 
         while(iter.hasNext()){
+            count++;
             
         }
     }
