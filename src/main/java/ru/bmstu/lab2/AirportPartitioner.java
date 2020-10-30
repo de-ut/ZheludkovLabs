@@ -6,6 +6,6 @@ import org.apache.hadoop.mapreduce.Partitioner;
 public class AirportPartitioner extends Partitioner<AirportID, Text> {
     @Override
     public int getPartition(AirportID airportID, Text text, int i) {
-        return (airportID.getId().hashCode() & Integer.MAX_VALUE) % ;
+        return (airportID.getId().hashCode() & Integer.MAX_VALUE) % i;
     }
 }
