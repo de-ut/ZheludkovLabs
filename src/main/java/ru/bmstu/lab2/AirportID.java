@@ -11,7 +11,9 @@ public class AirportID implements WritableComparable<AirportID> {
     private boolean indicator;
 
     AirportID() {}
-    AirportID()
+    AirportID(int id, boolean indicator){
+        
+    }
     @Override
     public int compareTo(AirportID o) {
         return 0;
