@@ -22,7 +22,9 @@ public class AirportReducer extends Reducer<AirportID, Text, Text, Text> {
         while(iter.hasNext()){
             count++;
             float current = Float.parseFloat(iter.next().toString());
-            
+            min = Math.min(min, current);
+            max = Math.max(max, current);
+            avg =
         }
     }
 }
