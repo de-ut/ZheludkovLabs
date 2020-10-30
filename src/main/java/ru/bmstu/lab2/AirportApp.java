@@ -1,6 +1,7 @@
 package ru.bmstu.lab2;
 
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.Job;
@@ -23,5 +24,6 @@ public class AirportApp {
         job.setGroupingComparatorClass(AirportGroupingComparator.class);
         job.setReducerClass(AirportReducer.class);
         job.setMapOutputKeyClass(AirportID.class);
+        job.setMapOutputValueClass(Text.class);
     }
 }
