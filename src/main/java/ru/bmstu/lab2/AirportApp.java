@@ -17,6 +17,6 @@ public class AirportApp {
         job.setJobName("AirportApp");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, );
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, );
-        FileOutputFormat.setOutputPath();
+        FileOutputFormat.setOutputPath(job, new Path(args[2]));
     }
 }
