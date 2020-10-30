@@ -1,4 +1,6 @@
 package ru.bmstu.lab2;
 
-public class AirportPartitioner extends {
+import org.apache.hadoop.mapreduce.Partitioner;
+
+public class AirportPartitioner extends Partitioner<> {
 }
