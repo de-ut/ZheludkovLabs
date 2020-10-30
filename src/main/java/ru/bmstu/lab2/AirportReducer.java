@@ -16,7 +16,7 @@ public class AirportReducer extends Reducer<AirportID, Text, Text, Text> {
 
         int count = 0;
         float min = Float.MAX_VALUE;
-        float max = Float.0;
+        float max = 0;
         float avg = 0;
 
     }
