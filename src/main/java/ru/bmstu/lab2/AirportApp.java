@@ -12,6 +12,6 @@ public class AirportApp {
         Job job = Job.getInstance();
         job.setJarByClass(AirportApp.class);
         job.setJobName("AirportApp");
-        MultipleInputs.addInputPath();
+        MultipleInputs.addInputPath(job, );
     }
 }
