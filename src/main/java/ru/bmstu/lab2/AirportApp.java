@@ -1,6 +1,6 @@
 package ru.bmstu.lab2;
 
-import 
+import org.apa
 
 public class AirportApp {
     public static void main(String[] args) throws Exception{
