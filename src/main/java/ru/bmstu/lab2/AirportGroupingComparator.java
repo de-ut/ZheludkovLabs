@@ -10,6 +10,6 @@ public class AirportGroupingComparator extends WritableComparator {
 
     @Override
     public int compare(WritableComparable a, WritableComparable b) {
-        return 
+        return ((AirportID)a).getId().compareTo(((AirportID)b).getId());
     }
 }
