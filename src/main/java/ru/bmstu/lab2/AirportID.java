@@ -16,6 +16,10 @@ public class AirportID implements WritableComparable<AirportID> {
         this.indicator = indicator;
     }
 
+    public String getId() {
+        return id;
+    }
+
     @Override
     public int compareTo(AirportID o) {
         int result = id.compareTo(o.id);
