@@ -8,10 +8,10 @@ import java.io.IOException;
 
 public class AirportID implements WritableComparable<AirportID> {
     private String id;
-    private Boolean indicator;
+    private String indicator;
 
     AirportID() {}
-    AirportID(String id, boolean indicator){
+    AirportID(String id, String indicator){
         this.id = id;
         this.indicator = indicator;
     }
