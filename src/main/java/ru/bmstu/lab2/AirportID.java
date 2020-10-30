@@ -29,6 +29,7 @@ public class AirportID implements WritableComparable<AirportID> {
 
     @Override
     public void readFields(DataInput dataInput) throws IOException {
-
+        id = dataInput.readInt();
+        indicator = dataInput.readBoolean();
     }
 }
