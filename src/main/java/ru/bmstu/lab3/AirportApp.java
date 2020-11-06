@@ -1,6 +1,7 @@
 package ru.bmstu.lab3;
 
 import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
@@ -17,7 +18,7 @@ public class AirportApp {
 
         JavaRDD<String> flightFile = sparkContext.textFile(args[0]);
         JavaRDD<String> airportFile = sparkContext.textFile(args[1]);
-        airportFile.mapToPair(s -> {
+        JavaPairRDD<> airportFile.mapToPair(s -> {
             String[] fields = Utilities.separate(s, 2);
             return new Tuple2<>(fields[0], fields[1])
         });
