@@ -1,7 +1,7 @@
 package ru.bmstu.lab3;
 
 public class FlightData {
-    private maxDelay;
+    private float maxDelay;
 
     public FlightData(){};
 
