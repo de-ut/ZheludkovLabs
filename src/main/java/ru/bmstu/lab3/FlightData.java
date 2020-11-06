@@ -4,6 +4,6 @@ import java.io.Serializable;
 
 public class FlightData implements Serializable {
     private float maxDelay;
-    private int total, 
+    private int total, late;
     public FlightData() {};
 }
