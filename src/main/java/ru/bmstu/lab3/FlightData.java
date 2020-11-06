@@ -8,6 +8,7 @@ public class FlightData {
     public FlightData(){};
 
     public FlightData(String value){
-        String[] fields = Utilities.separate(value, 0)
+        String[] fields = Utilities.separate(value, 0);
+
     }
 }
