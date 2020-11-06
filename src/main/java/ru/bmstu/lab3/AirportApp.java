@@ -10,6 +10,6 @@ public class AirportApp {
         }
 
         SparkConf conf = new SparkConf().setAppName("AirportApp");
-        
+        JavaSpark
     }
 }
