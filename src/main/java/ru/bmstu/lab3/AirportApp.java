@@ -7,6 +7,6 @@ public class AirportApp {
             System.exit(-1);
         }
 
-        SparkConf conf = new SparkConf()
+        SparkConf conf = new SparkConf().setAppn
     }
 }
