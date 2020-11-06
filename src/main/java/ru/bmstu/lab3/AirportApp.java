@@ -1,6 +1,7 @@
 package ru.bmstu.lab3;
 
 import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 public class AirportApp {
@@ -13,7 +14,9 @@ public class AirportApp {
         SparkConf conf = new SparkConf().setAppName("AirportApp");
         JavaSparkContext sparkContext = new JavaSparkContext(conf);
 
-        JavaRDD<String>
+        JavaRDD<String> flightFile = sparkContext.textFile(args[0]);
+        JavaRDD<String> airportFile = sparkContext.textFile(args[1]);
+
 
     }
 }
