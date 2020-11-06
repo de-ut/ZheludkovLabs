@@ -1,6 +1,7 @@
 package ru.bmstu.lab3;
 
 import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaSparkContext;
 
 public class AirportApp {
     public static void main(String[] args) {
@@ -10,6 +11,6 @@ public class AirportApp {
         }
 
         SparkConf conf = new SparkConf().setAppName("AirportApp");
-        JavaSparkContext sparkContext = new JavaSparkContext()
+        JavaSparkContext sparkContext = new JavaSparkContext(conf);
     }
 }
