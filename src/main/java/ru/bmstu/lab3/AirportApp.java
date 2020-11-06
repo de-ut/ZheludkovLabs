@@ -19,7 +19,7 @@ public class AirportApp {
 
         JavaRDD<String> flightFile = sparkContext.textFile(args[0]);
         JavaRDD<String> airportFile = sparkContext.textFile(args[1]);
-        JavaPairRDD<Text, Text> airportFile.mapToPair(s -> {
+        JavaPairRDD<Text, Text> airports = airportFile.mapToPair(s -> {
             String[] fields = Utilities.separate(s, 2);
             return new Tuple2<>(fields[0], fields[1])
         });
