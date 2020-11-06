@@ -7,7 +7,9 @@ public class FlightData implements Serializable {
     private int total, late;
     public FlightData() {};
 
-    public FlightData(maxDelay, total, late){
-        
+    public FlightData(float maxDelay, boolean isLate){
+        this.maxDelay = maxDelay;
+        total = 1;
+        late = isLate ? 1 : 0;
     }
 }
