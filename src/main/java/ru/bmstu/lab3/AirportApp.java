@@ -3,6 +3,7 @@ package ru.bmstu.lab3;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import scala.Tuple2;
 
 public class AirportApp {
     public static void main(String[] args) {
@@ -18,8 +19,8 @@ public class AirportApp {
         JavaRDD<String> airportFile = sparkContext.textFile(args[1]);
         airportFile.mapToPair(s -> {
             String[] fields = Utilities.separate(s, 2);
-            new Tuple2<>()
-        })
+            return new Tuple2<>(fields[0], fields[1])
+        });
 
 
     }
