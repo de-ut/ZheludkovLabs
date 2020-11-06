@@ -1,14 +1,7 @@
 package ru.bmstu.lab3;
 
-public class FlightData {
-    private float maxDelay;
-    private int total;
-    private int wrong;
+import java.io.Serializable;
 
-    public FlightData(){};
-
-    public FlightData(String value){
-        String[] fields = Utilities.separate(value, 0);
-
-    }
+public class FlightData implements Serializable {
+    
 }
