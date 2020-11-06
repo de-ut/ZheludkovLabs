@@ -6,4 +6,8 @@ public class FlightData implements Serializable {
     private float maxDelay;
     private int total, late;
     public FlightData() {};
+
+    public FlightData(maxDelay, total, late){
+        
+    }
 }
