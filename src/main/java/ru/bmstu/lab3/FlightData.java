@@ -17,4 +17,14 @@ public class FlightData implements Serializable {
             late = maxDelay == 0 ? 0 : 1;
         }
     }
+
+    public FlightData(float maxDelay, int total, int late){
+        this.maxDelay = maxDelay;
+        this.total = total;
+        this.late = late;
+    }
+
+    public FlightData union(FlightData other){
+        return new FlightData(Math.max(maxDelay, other.maxDelay), total + other.total, late + other.late);
+    }
 }
