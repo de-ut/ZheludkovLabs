@@ -7,8 +7,6 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class AirportMapper extends Mapper<LongWritable, Text, AirportID, Text> {
-    private static final String QUOTE_PATTERN = "\"";
-    private static final String COMMA_SEPARATOR = ",";
     private static final int AIRPORT_ID = 0;
     private static final int AIRPORT_NAME = 1;
 
