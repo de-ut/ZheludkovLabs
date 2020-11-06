@@ -7,10 +7,15 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class AirportMapper extends Mapper<LongWritable, Text, AirportID, Text> {
+    private static final String QUOTE_PATTERN = "\"";
+    private static final String COMMA_SEPARATOR = ",";
+    private static final int AIRPORT_ID = 0;
+    private static final int AIRPORT_NAME = 1;
+
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if(key.get() == 0) return;
-        String[] fields = value.toString().replace("\"", "").split(",", 2);
-        context.write(new AirportID(fields[0], "0"), new Text(fields[1]));
+        String[] fields = value.toString().replace(QUOTE_PATTERN, "").split(COMMA_SEPARATOR, 2);
+        context.write(new AirportID(fields[AIRPORT_ID], AirportID.DATA_AIRPORT_INDICATOR), new Text(fields[AIRPORT_NAME]));
     }
 }

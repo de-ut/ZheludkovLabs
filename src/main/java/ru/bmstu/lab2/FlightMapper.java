@@ -7,12 +7,18 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text> {
+    private static final String QUOTE_PATTERN = "\"";
+    private static final String COMMA_SEPARATOR = ",";
+    private static final int AIRPORT_ID = 14;
+    private static final int ARRIVAL_DELAY = 18;
+    private static final String FLOAT_ZERO_STRING = "0.00";
+
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if(key.get() == 0) return;
-        String[] fields = value.toString().replace("\"", "").split(",");
-        String delay = fields[18];
-        if(!delay.isEmpty() && !delay.equals("0.00"))
-            context.write(new AirportID(fields[14], "1"), new Text(delay));
+        String[] fields = value.toString().replace(QUOTE_PATTERN, "").split(COMMA_SEPARATOR);
+        String delay = fields[ARRIVAL_DELAY];
+        if(!delay.isEmpty() && !delay.equals(FLOAT_ZERO_STRING))
+            context.write(new AirportID(fields[AIRPORT_ID], AirportID.DATA_FLIGHT_INDICATOR), new Text(delay));
     }
 }

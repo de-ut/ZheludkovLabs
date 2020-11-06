@@ -7,6 +7,9 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class AirportID implements WritableComparable<AirportID> {
+    public static final String DATA_AIRPORT_INDICATOR = "0";
+    public static final String DATA_FLIGHT_INDICATOR = "1";
+
     private String id;
     private String indicator;
 
