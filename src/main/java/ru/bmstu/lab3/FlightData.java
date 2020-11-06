@@ -7,9 +7,14 @@ public class FlightData implements Serializable {
     private int total, late;
     public FlightData() {};
 
-    public FlightData(float maxDelay, boolean isLate){
-        this.maxDelay = maxDelay;
+    public FlightData(String delay){
         total = 1;
-        late = isLate ? 1 : 0;
+        if (delay.isEmpty()){
+            maxDelay = 0;
+            late = 1;
+        } else{
+            maxDelay = Float.parseFloat(delay);
+            late = maxDelay == 0 ? 0 : 1;
+        }
     }
 }
