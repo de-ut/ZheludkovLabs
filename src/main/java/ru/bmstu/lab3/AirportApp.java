@@ -10,6 +10,6 @@ public class AirportApp {
         }
 
         SparkConf conf = new SparkConf().setAppName("AirportApp");
-        JavaSparkContext sparkContext = new
+        JavaSparkContext sparkContext = new JavaSparkContext()
     }
 }
