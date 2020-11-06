@@ -1,4 +1,4 @@
-package ru.bmstu.lab2;
+package ru.bmstu.lab3;
 
 import org.apache.hadoop.io.Text;
 
