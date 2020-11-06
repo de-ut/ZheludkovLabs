@@ -23,6 +23,7 @@ public class AirportApp {
             return new Tuple2<Tuple2<String, String>, FlightData>(
                     new Tuple2<String, String>(fields[11], fields[14]), new FlightData(fields[18]));
         });
+        flights.reduceByKey()
 
         JavaRDD<String> airportFile = sparkContext.textFile(args[1]);
         JavaPairRDD<String, String> airports = airportFile.mapToPair(s -> {
