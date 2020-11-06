@@ -13,7 +13,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportID, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if(key.get() == 0) return;
-        String[] fields = null;
+        String[] fields = Utilities.separate(value, 2);
         context.write(new AirportID(fields[AIRPORT_ID], AirportID.DATA_AIRPORT_INDICATOR), new Text(fields[AIRPORT_NAME]));
     }
 }
