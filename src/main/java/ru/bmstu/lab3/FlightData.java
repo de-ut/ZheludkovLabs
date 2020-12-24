@@ -30,7 +30,7 @@ public class FlightData implements Serializable {
 
     @Override
     public String toString() {
-        return "FlightData{" +
+        return "MaxDelay" +
                 "maxDelay=" + maxDelay +
                 ", total=" + total +
                 ", late=" + late +
