@@ -4,36 +4,39 @@ import java.io.Serializable;
 
 public class FlightData implements Serializable {
     private float maxDelay;
-    private int total, late;
+    private int total, late, canceled;
     public FlightData() {};
 
     public FlightData(String delay){
         total = 1;
         if (delay.isEmpty()){
-            maxDelay = 0;
-            late = 1;
+            canceled = 1;
+            maxDelay = 0.f;
+            late = 0;
         } else{
+            canceled = 0;
             maxDelay = Float.parseFloat(delay);
-            late = maxDelay == 0 ? 0 : 1;
+            late = maxDelay == 0.f ? 0 : 1;
         }
     }
 
-    public FlightData(float maxDelay, int total, int late){
+    public FlightData(float maxDelay, int total, int late, int canceled){
         this.maxDelay = maxDelay;
         this.total = total;
         this.late = late;
+        this.canceled = canceled;
     }
 
     public FlightData union(FlightData other){
-        return new FlightData(Math.max(maxDelay, other.maxDelay), total + other.total, late + other.late);
+        return new FlightData(Math.max(maxDelay, other.maxDelay), total + other.total, late + other.late, canceled + other.canceled);
     }
 
     @Override
     public String toString() {
-        return String.format("maxDelay: %f; arriveRatio: %.2f;", maxDelay, getPercents());
+        return String.format("late: %.2f%%; maxDelay: %f; canceled: %.2f%%;", getPercents(late), maxDelay, getPercents(canceled));
     }
 
-    private float getPercents(){
-        return 100.f*late/total;
+    private float getPercents(int count){
+        return 100.f*count/total;
     }
 }
