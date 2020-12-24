@@ -13,7 +13,7 @@ public class AirportApp {
 
     public static final int ORIGIN_AIRPORT_ID = 11;
     public static final int DEST_AIRPORT_ID = 14;
-    public static final int DELAY = 18
+    public static final int DELAY = 18;
 
     public static final int FLIGHT_SEPARATION_LIMIT = 0;
     public static final int AIRPORT_SEPARATION_LIMIT = 2;
