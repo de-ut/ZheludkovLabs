@@ -51,7 +51,7 @@ public class AirportApp {
 
         final Broadcast<Map<String,String>> airportsBroadcasted = sparkContext.broadcast(airports);
 
-        JavaRDD<String> 
+        JavaRDD<String> result
 
 
 
