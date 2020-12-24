@@ -49,7 +49,7 @@ public class AirportApp {
                 })
                 .collectAsMap();
 
-        final Broadcast<Map<String,String>> airportBrodcast
+        final Broadcast<Map<String,String>>
 
 
 
