@@ -31,8 +31,9 @@ public class AirportApp {
         JavaSparkContext sparkContext = new JavaSparkContext(conf);
 
         JavaRDD<String> flightFile = sparkContext.textFile(args[0]);
+        String flightToSkip = flightFile.first();
         JavaPairRDD<Tuple2<String, String>, FlightData> flights = flightFile
-                .filter(str -> !str.equals(flightFile.first()))
+                .filter(str -> !str.equals(flightToSkip))
                 .mapToPair(s -> {
                     String[] fields = Utilities.separate(s, FLIGHT_SEPARATION_LIMIT);
                     return new Tuple2<Tuple2<String, String>, FlightData>(
@@ -43,8 +44,9 @@ public class AirportApp {
 
         System.out.println("CREATING FLIGHTS2 IS DONE");
         JavaRDD<String> airportFile = sparkContext.textFile(args[1]);
+        String airportToSkip = airportFile.first();
         Map<String, String> airports = airportFile
-                .filter(str -> !str.equals(airportFile.first()))
+                .filter(str -> !str.equals(airportToSkip))
                 .mapToPair(s -> {
                     String[] fields = Utilities.separate(s, AIRPORT_SEPARATION_LIMIT);
                     return new Tuple2<>(fields[AIRPORT_CODE], fields[AIRPORT_DESCRIPTION]);
