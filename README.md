@@ -7,6 +7,8 @@
 *https://github.com/de-ut/ZheludkovLabs/tree/main/src/main/java/ru/bmstu/lab2*  
 Сдал  
   
+## Непроверенные лабораторные работы  
+  
 **Лабораторная работа №3**  
 *https://github.com/de-ut/ZheludkovLabs/tree/main/src/main/java/ru/bmstu/lab3*  
 Сделана  
