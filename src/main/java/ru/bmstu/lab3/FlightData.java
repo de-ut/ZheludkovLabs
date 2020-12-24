@@ -27,4 +27,6 @@ public class FlightData implements Serializable {
     public FlightData union(FlightData other){
         return new FlightData(Math.max(maxDelay, other.maxDelay), total + other.total, late + other.late);
     }
+
+
 }
