@@ -29,19 +29,21 @@ public class AirportApp {
 
         JavaRDD<String> flightFile = sparkContext.textFile(args[0]);
         JavaPairRDD<Tuple2<String, String>, FlightData> flights = flightFile
-                .filter(str -> str.equals(flightFile.first()))
+                .filter(str -> !str.equals(flightFile.first()))
                 .mapToPair(s -> {
                     String[] fields = Utilities.separate(s, FLIGHT_SEPARATION_LIMIT);
                     return new Tuple2<Tuple2<String, String>, FlightData>(
                     new Tuple2<String, String>(fields[ORIGIN_AIRPORT_ID], fields[DEST_AIRPORT_ID]), new FlightData(fields[DELAY]));
-        });
-        flights.reduceByKey(FlightData::union);
+                })
+                .reduceByKey(FlightData::union);
 
         JavaRDD<String> airportFile = sparkContext.textFile(args[1]);
-        JavaPairRDD<String, String> airports = airportFile.mapToPair(s -> {
-            String[] fields = Utilities.separate(s, AIRPORT_SEPARATION_LIMIT);
-            return new Tuple2<>(fields[AIRPORT_CODE], fields[AIRPORT_DESCRIPTION]);
-        });
+        JavaPairRDD<String, String> airports = airportFile
+                .filter(str -> !str.equals(airportFile.first()))
+                .mapToPair(s -> {
+                    String[] fields = Utilities.separate(s, AIRPORT_SEPARATION_LIMIT);
+                    return new Tuple2<>(fields[AIRPORT_CODE], fields[AIRPORT_DESCRIPTION]);
+                });
 
 
 
