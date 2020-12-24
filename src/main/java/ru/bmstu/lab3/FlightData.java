@@ -32,4 +32,8 @@ public class FlightData implements Serializable {
     public String toString() {
         return "maxDelay: " + maxDelay + "; arriveRatio: " + + ";";
     }
+
+    private float getPercents(){
+        return Math. (100.f*late/total)
+    }
 }
