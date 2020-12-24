@@ -54,6 +54,7 @@ public class AirportApp {
         JavaRDD<String> result = flights.map(s -> {
             return "FROM " + airportsBroadcasted.value().get(s._1._1) + " TO " + airportsBroadcasted.value().get(s._1._2) + " - " + s._2;
         });
+
         
 
 
