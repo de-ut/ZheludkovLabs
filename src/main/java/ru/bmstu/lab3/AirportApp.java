@@ -30,6 +30,7 @@ public class AirportApp {
             String[] fields = Utilities.separate(s, 2);
             return new Tuple2<>(fields[0], fields[1]);
         });
+        
 
 
     }

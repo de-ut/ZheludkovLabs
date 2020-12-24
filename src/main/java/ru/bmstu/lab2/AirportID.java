@@ -13,7 +13,6 @@ public class AirportID implements WritableComparable<AirportID> {
     private String id;
     private String indicator;
 
-    AirportID() {}
     AirportID(String id, String indicator){
         this.id = id;
         this.indicator = indicator;
