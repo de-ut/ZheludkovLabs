@@ -37,9 +37,11 @@ public class AirportApp {
                     String[] fields = Utilities.separate(s, FLIGHT_SEPARATION_LIMIT);
                     return new Tuple2<Tuple2<String, String>, FlightData>(
                     new Tuple2<String, String>(fields[ORIGIN_AIRPORT_ID], fields[DEST_AIRPORT_ID]), new FlightData(fields[DELAY]));
-                })
-                .reduceByKey(FlightData::union);
+                });
+        System.out.println("CREATING FLIGHTS IS DONE");
+        JavaPairRDD<Tuple2<String, String>, FlightData> flights2 = flights.reduceByKey(FlightData::union);
 
+        System.out.println("CREATING FLIGHTS2 IS DONE");
         JavaRDD<String> airportFile = sparkContext.textFile(args[1]);
         Map<String, String> airports = airportFile
                 .filter(str -> !str.equals(airportFile.first()))
@@ -49,6 +51,7 @@ public class AirportApp {
                 })
                 .collectAsMap();
 
+        System.out.println("CREATING AIRPORTS IS DONE");
         final Broadcast<Map<String,String>> airportsBroadcasted = sparkContext.broadcast(airports);
 
         JavaRDD<String> result = flights.map(s -> {
