@@ -8,7 +8,8 @@ import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
 
 public class AirportApp {
-    public static final int FLIGHT_
+    
+    public static final int DESTINATION_ID = 14;
 
     public static final int FLIGHT_SEPARATION_LIMIT = 0;
     public static final int AIRPORT_SEPARATION_LIMIT = 2;
