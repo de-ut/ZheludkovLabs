@@ -10,7 +10,7 @@ import scala.Tuple2;
 
 import java.util.Map;
 
-public class AirportApp {
+public class AirportSparkApp {
     public static final int AIRPORT_CODE = 0;
     public static final int AIRPORT_DESCRIPTION = 1;
 
@@ -27,7 +27,7 @@ public class AirportApp {
             System.exit(-1);
         }
 
-        SparkConf conf = new SparkConf().setAppName("AirportApp");
+        SparkConf conf = new SparkConf().setAppName("AirportSparkApp");
         JavaSparkContext sparkContext = new JavaSparkContext(conf);
 
         JavaRDD<String> flightFile = sparkContext.textFile(args[0]);
