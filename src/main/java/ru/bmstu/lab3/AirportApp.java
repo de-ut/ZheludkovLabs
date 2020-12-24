@@ -52,7 +52,7 @@ public class AirportApp {
         final Broadcast<Map<String,String>> airportsBroadcasted = sparkContext.broadcast(airports);
 
         JavaRDD<String> result = flights.map(s -> {
-            "FROM " + airportsBroadcasted.value().get(str._1)
+            "FROM " + airportsBroadcasted.value().get(str._1._2)
         })
 
 
