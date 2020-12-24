@@ -26,7 +26,7 @@ public class AirportApp {
             System.err.println("Use: AirportApp <flight path> <airport path> <output path>");
             System.exit(-1);
         }
-        
+
         SparkConf conf = new SparkConf().setAppName("AirportApp");
         JavaSparkContext sparkContext = new JavaSparkContext(conf);
 
