@@ -47,7 +47,8 @@ public class AirportApp {
                     return new Tuple2<>(fields[AIRPORT_CODE], fields[AIRPORT_DESCRIPTION]);
                 })
                 .collectAsMap();
-        
+
+        finalB
 
 
 
