@@ -38,7 +38,7 @@ public class AirportApp {
                 .reduceByKey(FlightData::union);
 
         JavaRDD<String> airportFile = sparkContext.textFile(args[1]);
-        JavaPairRDD<String, String> airports = airportFile
+        Map<String, String> airports = airportFile
                 .filter(str -> !str.equals(airportFile.first()))
                 .mapToPair(s -> {
                     String[] fields = Utilities.separate(s, AIRPORT_SEPARATION_LIMIT);
