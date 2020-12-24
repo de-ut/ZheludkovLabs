@@ -43,7 +43,8 @@ public class AirportApp {
                 .mapToPair(s -> {
                     String[] fields = Utilities.separate(s, AIRPORT_SEPARATION_LIMIT);
                     return new Tuple2<>(fields[AIRPORT_CODE], fields[AIRPORT_DESCRIPTION]);
-                });
+                })
+                .collectAsMap();
 
 
 
