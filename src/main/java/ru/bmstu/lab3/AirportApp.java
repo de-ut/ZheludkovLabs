@@ -55,9 +55,6 @@ public class AirportApp {
             return "FROM " + airportsBroadcasted.value().get(s._1._1) + " TO " + airportsBroadcasted.value().get(s._1._2) + " - " + s._2;
         });
 
-        
-
-
-
+        result.saveAsTextFile(args[2]);
     }
 }
