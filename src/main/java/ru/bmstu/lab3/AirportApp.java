@@ -49,7 +49,9 @@ public class AirportApp {
                 })
                 .collectAsMap();
 
-        final Broadcast<Map<String,String>> airportBroadcasted = sparkContext.broadcast()
+        final Broadcast<Map<String,String>> airportBroadcasted = sparkContext.broadcast(airports);
+
+        
 
 
 
