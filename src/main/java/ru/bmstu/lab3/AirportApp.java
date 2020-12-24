@@ -13,6 +13,7 @@ public class AirportApp {
 
     public static final int ORIGIN_AIRPORT_ID = 11;
     public static final int DEST_AIRPORT_ID = 14;
+    public static final int DELAY = 18
 
     public static final int FLIGHT_SEPARATION_LIMIT = 0;
     public static final int AIRPORT_SEPARATION_LIMIT = 2;
@@ -30,7 +31,7 @@ public class AirportApp {
         JavaPairRDD<Tuple2<String, String>, FlightData> flights = flightFile.mapToPair(s -> {
             String[] fields = Utilities.separate(s, FLIGHT_SEPARATION_LIMIT);
             return new Tuple2<Tuple2<String, String>, FlightData>(
-                    new Tuple2<String, String>(fields[ORIGIN_AIRPORT_ID], fields[DEST_AIRPORT_ID]), new FlightData(fields[18]));
+                    new Tuple2<String, String>(fields[ORIGIN_AIRPORT_ID], fields[DEST_AIRPORT_ID]), new FlightData(fields[DELAY]));
         });
         flights.reduceByKey(FlightData::union);
 
