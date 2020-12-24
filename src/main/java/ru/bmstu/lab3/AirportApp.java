@@ -45,19 +45,19 @@ public class AirportApp {
         System.out.println("CREATING FLIGHTS2 IS DONE");
         JavaRDD<String> airportFile = sparkContext.textFile(args[1]);
         String airportToSkip = airportFile.first();
-        Map<String, String> airports = airportFile
+        JavaPairRDD<String, String> airports = airportFile
                 .filter(str -> !str.equals(airportToSkip))
                 .mapToPair(s -> {
                     String[] fields = Utilities.separate(s, AIRPORT_SEPARATION_LIMIT);
                     return new Tuple2<>(fields[AIRPORT_CODE], fields[AIRPORT_DESCRIPTION]);
-                })
-                .collectAsMap();
+                });
 
         System.out.println("CREATING AIRPORTS IS DONE");
-        final Broadcast<Map<String,String>> airportsBroadcasted = sparkContext.broadcast(airports);
+        final Broadcast<Map<String,String>> airportsBroadcasted = sparkContext.broadcast(airports.collectAsMap());
 
         JavaRDD<String> result = flights.map(s -> {
-            return "FROM " + airportsBroadcasted.value().get(s._1._1) + " TO " + airportsBroadcasted.value().get(s._1._2) + " - " + s._2;
+            String formattedStr = "FROM " + airportsBroadcasted.value().get(s._1._1) + " TO " + airportsBroadcasted.value().get(s._1._2) + " - " + s._2.toString();
+            return formattedStr;
         });
 
         result.saveAsTextFile(args[2]);
