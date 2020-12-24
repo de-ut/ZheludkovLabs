@@ -30,7 +30,7 @@ public class FlightData implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("maxDelay: %f; arriveRatio: %.2f%;", maxDelay, getPercents());
+        return String.format("maxDelay: %f; arriveRatio: %.2f;", maxDelay, getPercents());
     }
 
     private float getPercents(){
