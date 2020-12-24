@@ -7,6 +7,8 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
 
+import java.util.Map;
+
 public class AirportApp {
     public static final int AIRPORT_CODE = 0;
     public static final int AIRPORT_DESCRIPTION = 1;
@@ -45,6 +47,7 @@ public class AirportApp {
                     return new Tuple2<>(fields[AIRPORT_CODE], fields[AIRPORT_DESCRIPTION]);
                 })
                 .collectAsMap();
+        
 
 
 
