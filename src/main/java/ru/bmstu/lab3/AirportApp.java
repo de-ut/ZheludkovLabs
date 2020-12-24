@@ -38,7 +38,7 @@ public class AirportApp {
                     return new Tuple2<Tuple2<String, String>, FlightData>(
                     new Tuple2<String, String>(fields[ORIGIN_AIRPORT_ID], fields[DEST_AIRPORT_ID]), new FlightData(fields[DELAY]));
                 })
-                .reduceByKey(FlightData::union);
+                .reduceByKey(FlightData::new);
 
         JavaRDD<String> airportFile = sparkContext.textFile(args[1]);
         Map<String, String> airports = airportFile

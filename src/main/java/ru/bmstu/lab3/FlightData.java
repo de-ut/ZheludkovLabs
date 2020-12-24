@@ -19,13 +19,9 @@ public class FlightData implements Serializable {
     }
 
     public FlightData(FlightData one, FlightData two){
-        return FlightData(Math.max(one.maxDelay, two.maxDelay), one.total + two.total, one.late + two.late);
-    }
-
-    public FlightData(float maxDelay, int total, int late){
-        this.maxDelay = maxDelay;
-        this.total = total;
-        this.late = late;
+        this.maxDelay = Math.max(one.maxDelay, two.maxDelay);
+        this.total = one.total + two.total;
+        this.late = one.late + two.late;
     }
 
     @Override
